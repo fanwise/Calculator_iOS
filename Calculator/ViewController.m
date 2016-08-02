@@ -3,9 +3,9 @@
 //  Calculator
 //
 //  Created by Wei
-Fan on 8/2/16.
+//Fan on 8/2/16.
 //  Copyright © 2016 Wei
-Fan. All rights reserved.
+//Fan. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -15,6 +15,13 @@ Fan. All rights reserved.
 @end
 
 @implementation ViewController
+
+@synthesize display;
+
+-(IBAction)click1
+{
+    display.text = @"1";
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
