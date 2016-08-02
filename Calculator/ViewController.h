@@ -37,9 +37,9 @@
 
 -(IBAction)clickNumber0Button;
 
--(IBAction)clicACButton;
+-(IBAction)clickACButton;
 
--(IBAction)clicPosNegButton;
+-(IBAction)clickPosNegButton;
 
 -(IBAction)clickpercentageButton;
 

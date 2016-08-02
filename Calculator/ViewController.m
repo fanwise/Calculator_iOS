@@ -88,6 +88,19 @@
     [self displayResult];
 }
 
+-(IBAction)clickACButton
+{
+    displayNumber =  0;
+    [self displayResult];
+}
+
+-(IBAction)clickPosNegButton
+{
+    displayNumber =  displayNumber * -1;
+    [self displayResult];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     displayNumber = 0;
