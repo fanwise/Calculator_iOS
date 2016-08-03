@@ -20,96 +20,25 @@
 
 @end
 
-@implementation ViewController
-{
+@implementation ViewController {
     long displayNumber;
     long firstOperationNumber;
     long secondOperationNumber;
     int numberIndex;
     int operation;
-    NSString *displayString;
+    NSString * displayString;
 }
 
 @synthesize display;
 
--(void) displayInputNumber
-{
-//    if (numberIndex == 0)
-//    {
-//        numberIndex = 1;
-//    }else
-    if(numberIndex == 1 && operation > 0)
-    {
-        numberIndex = 2;
-    }
-    displayString = [NSString stringWithFormat:@"%ld", displayNumber];
-    display.text = displayString;
+-(IBAction)clickNumberButton:(UIButton *)sender {
+    displayNumber = displayNumber * 10 + sender.tag;
+    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
--(IBAction)clickNumber1Button
-{
-    displayNumber = displayNumber * 10 + 1;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber2Button
-{
-    displayNumber = displayNumber * 10 + 2;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber3Button
-{
-    displayNumber = displayNumber * 10 + 3;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber4Button
-{
-    displayNumber = displayNumber * 10 + 4;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber5Button
-{
-    displayNumber = displayNumber * 10 + 5;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber6Button
-{
-    displayNumber = displayNumber * 10 + 6;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber7Button
-{
-    displayNumber = displayNumber * 10 + 7;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber8Button
-{
-    displayNumber = displayNumber * 10 + 8;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber9Button
-{
-    displayNumber = displayNumber * 10 + 9;
-    [self displayInputNumber];
-}
-
--(IBAction)clickNumber0Button
-{
-    displayNumber = displayNumber * 10 + 0;
-    [self displayInputNumber];
-}
-
--(IBAction)clickACButton
-{
+-(IBAction)clickACButton {
     displayNumber =  0;
-    [self displayInputNumber];
+    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
 -(IBAction)clickPosNegButton
@@ -128,11 +57,9 @@
     firstOperationNumber = displayNumber;
     displayNumber = 0;
     operation = PLUS;
-    
 }
 
--(void)doPlus
-{
+-(void)doPlus {
     if (numberIndex == 2)
     {
         secondOperationNumber = displayNumber;

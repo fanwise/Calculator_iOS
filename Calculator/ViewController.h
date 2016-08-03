@@ -25,25 +25,7 @@
 
 -(void) doDivide;
 
--(IBAction)clickNumber1Button;
-
--(IBAction)clickNumber2Button;
-
--(IBAction)clickNumber3Button;
-
--(IBAction)clickNumber4Button;
-
--(IBAction)clickNumber5Button;
-
--(IBAction)clickNumber6Button;
-
--(IBAction)clickNumber7Button;
-
--(IBAction)clickNumber8Button;
-
--(IBAction)clickNumber9Button;
-
--(IBAction)clickNumber0Button;
+-(IBAction)clickNumberButton:(UIButton *)sender;
 
 -(IBAction)clickACButton;
 
