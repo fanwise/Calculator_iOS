@@ -141,6 +141,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92277486909999995" green="0.55036081550000004" blue="0.14771588660000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="÷"/>
+                                <connections>
+                                    <action selector="clickDivideButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="QZV-44-jQm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sIf-7V-vdN">
                                 <rect key="frame" x="27" y="560" width="161" height="80"/>

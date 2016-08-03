@@ -23,6 +23,8 @@
 
 -(void) doMultiply;
 
+-(void) doDivide;
+
 -(IBAction)clickNumber1Button;
 
 -(IBAction)clickNumber2Button;

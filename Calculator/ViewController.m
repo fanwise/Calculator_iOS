@@ -187,6 +187,33 @@
     display.text = displayString;
 }
 
+-(IBAction)clickDivideButton
+{
+    firstOperationNumber = displayNumber;
+    displayNumber = 0;
+    operation = DIVIDE;
+    display.text = @"/";
+}
+
+-(void)doDivide
+{
+    if (numberIndex == 2)
+    {
+        secondOperationNumber = displayNumber;
+        
+    }else if(numberIndex == 0)
+    {
+        firstOperationNumber = answer;
+    }
+    if(secondOperationNumber != 0)
+    {
+        answer = firstOperationNumber / secondOperationNumber;
+        displayString = [NSString stringWithFormat:@"%ld", answer];
+        display.text = displayString;
+    }else
+        display.text = @"Err: can't divide 0";
+}
+
 -(IBAction)clickEqualButton
 {
     switch (operation) {
@@ -198,6 +225,9 @@
             break;
         case MULTIPLY:
             [self doMultiply];
+            break;
+        case DIVIDE:
+            [self doDivide];
             break;
         default:
             break;
