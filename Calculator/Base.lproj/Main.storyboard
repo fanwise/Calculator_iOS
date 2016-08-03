@@ -36,6 +36,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92277486910994766" green="0.55036081552932359" blue="0.14771588657391904" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="clickPlusButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEZ-Zc-y0x"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FcE-io-kWf">
                                 <rect key="frame" x="27" y="398" width="80" height="80"/>
@@ -153,6 +156,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92277486909999995" green="0.55036081550000004" blue="0.14771588660000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="="/>
+                                <connections>
+                                    <action selector="clickEqualButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="XX4-SE-ecM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="az6-Gi-mRL">
                                 <rect key="frame" x="27" y="479" width="80" height="80"/>

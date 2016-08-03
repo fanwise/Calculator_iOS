@@ -15,7 +15,9 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *display;
 
--(void) displayResult;
+-(void) displayInputNumber;
+
+-(void) doPlus;
 
 -(IBAction)clickNumber1Button;
 
