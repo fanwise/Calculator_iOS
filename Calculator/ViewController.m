@@ -78,8 +78,12 @@
 }
 
 -(void)doDivide {
-    displayNumber = firstOperationNumber / secondOperationNumber;
-    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
+    if(secondOperationNumber != 0)
+    {
+        displayNumber = firstOperationNumber / secondOperationNumber;
+        display.text = [NSString stringWithFormat:@"%ld", displayNumber];
+    }else
+        display.text = @"Err: can't divide 0";
 }
 
 -(IBAction)clickEqualButton {
