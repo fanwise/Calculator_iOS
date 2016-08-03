@@ -164,6 +164,29 @@
     display.text = displayString;
 }
 
+-(IBAction)clickMulitplyButton
+{
+    firstOperationNumber = displayNumber;
+    displayNumber = 0;
+    operation = MULTIPLY;
+    display.text = @"*";
+}
+
+-(void)doMultiply
+{
+    if (numberIndex == 2)
+    {
+        secondOperationNumber = displayNumber;
+        
+    }else if(numberIndex == 0)
+    {
+        firstOperationNumber = answer;
+    }
+    answer = firstOperationNumber * secondOperationNumber;
+    displayString = [NSString stringWithFormat:@"%ld", answer];
+    display.text = displayString;
+}
+
 -(IBAction)clickEqualButton
 {
     switch (operation) {
@@ -172,6 +195,9 @@
             break;
         case MINUS:
             [self doMinus];
+            break;
+        case MULTIPLY:
+            [self doMultiply];
             break;
         default:
             break;
