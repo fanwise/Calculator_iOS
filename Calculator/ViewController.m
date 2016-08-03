@@ -141,11 +141,37 @@
     display.text = displayString;
 }
 
+-(IBAction)clickMinusButton
+{
+    firstOperationNumber = displayNumber;
+    displayNumber = 0;
+    operation = MINUS;
+    display.text = @"-";
+}
+
+-(void)doMinus
+{
+    if (numberIndex == 2)
+    {
+        secondOperationNumber = displayNumber;
+        
+    }else if(numberIndex == 0)
+    {
+        firstOperationNumber = answer;
+    }
+    answer = firstOperationNumber - secondOperationNumber;
+    displayString = [NSString stringWithFormat:@"%ld", answer];
+    display.text = displayString;
+}
+
 -(IBAction)clickEqualButton
 {
     switch (operation) {
         case PLUS:
             [self doPlus];
+            break;
+        case MINUS:
+            [self doMinus];
             break;
         default:
             break;

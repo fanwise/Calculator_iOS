@@ -19,6 +19,8 @@
 
 -(void) doPlus;
 
+-(void) doMinus;
+
 -(IBAction)clickNumber1Button;
 
 -(IBAction)clickNumber2Button;
