@@ -38,15 +38,6 @@
                                     <action selector="clickNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPi-Mm-YVP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VjQ-7S-4Yx">
-                                <rect key="frame" x="270" y="479" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92277486910994766" green="0.55036081552932359" blue="0.14771588657391904" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="+"/>
-                                <connections>
-                                    <action selector="clickPlusButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEZ-Zc-y0x"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FcE-io-kWf">
                                 <rect key="frame" x="27" y="398" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,13 +65,13 @@
                                     <action selector="clickNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5C-ow-iDm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lF1-r9-gDf">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lF1-r9-gDf">
                                 <rect key="frame" x="270" y="398" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92277486909999995" green="0.55036081550000004" blue="0.14771588660000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="-"/>
                                 <connections>
-                                    <action selector="clickMinusButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="8c8-IY-BNe"/>
+                                    <action selector="clickOperationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PjH-m1-8uG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="owa-6Z-i63">
@@ -102,13 +93,13 @@
                                     <action selector="clickNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hyp-X0-shO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fy9-jf-Drs">
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fy9-jf-Drs">
                                 <rect key="frame" x="270" y="317" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92277486909999995" green="0.55036081550000004" blue="0.14771588660000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <action selector="clickMulitplyButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="uAj-X2-ocO"/>
+                                    <action selector="clickOperationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JoY-bH-kLi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4LE-cc-fq1">
@@ -135,13 +126,13 @@
                                 <color key="backgroundColor" red="0.70255235599999999" green="0.70255235599999999" blue="0.70255235599999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="%"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OrG-Mi-ttJ">
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OrG-Mi-ttJ">
                                 <rect key="frame" x="270" y="236" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92277486909999995" green="0.55036081550000004" blue="0.14771588660000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="÷"/>
                                 <connections>
-                                    <action selector="clickDivideButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="QZV-44-jQm"/>
+                                    <action selector="clickOperationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gkj-fF-TLC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sIf-7V-vdN">
@@ -184,6 +175,15 @@
                                 <state key="normal" title="9"/>
                                 <connections>
                                     <action selector="clickNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hyK-Ak-eeh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VjQ-7S-4Yx">
+                                <rect key="frame" x="270" y="479" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92277486910994766" green="0.55036081552932359" blue="0.14771588657391904" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="clickOperationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJS-vI-ckC"/>
                                 </connections>
                             </button>
                         </subviews>

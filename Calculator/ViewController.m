@@ -10,11 +10,7 @@
 
 #import "ViewController.h"
 
-#define PLUS       1
-#define MINUS      2
-#define MULTIPLY   3
-#define DIVIDE     4
-#define NONE       0
+
 
 @interface ViewController ()
 
@@ -24,165 +20,100 @@
     long displayNumber;
     long firstOperationNumber;
     long secondOperationNumber;
-    int numberIndex;
-    int operation;
-    NSString * displayString;
+    enum operation currentOperation;
+    enum inputPosition currentInputPosition;
 }
 
 @synthesize display;
 
 -(IBAction)clickNumberButton:(UIButton *)sender {
+    if(currentInputPosition == equalChar) {
+        currentInputPosition = firstNumber;
+        displayNumber = 0;
+        currentOperation = none;
+        secondOperationNumber = 0;
+    }else if(currentInputPosition == operationChar) {
+        currentInputPosition = secondNumber;
+        displayNumber = 0;
+    }
     displayNumber = displayNumber * 10 + sender.tag;
     display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
 -(IBAction)clickACButton {
+    currentInputPosition = firstNumber;
     displayNumber =  0;
+    currentOperation = none;
     display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
--(IBAction)clickPosNegButton
-{
+-(IBAction)clickPosNegButton {
     displayNumber =  displayNumber * -1;
-    [self displayInputNumber];
+    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
--(IBAction)clickPlusButton
-{
-    if(numberIndex == 2)
+-(IBAction)clickOperationButton:(UIButton *)sender {
+    if(currentInputPosition == secondNumber) {
         [self clickEqualButton];
-    else
-        display.text = @"+";
-    numberIndex = 1;
+    }
+    currentOperation = (int)sender.tag;
     firstOperationNumber = displayNumber;
-    displayNumber = 0;
-    operation = PLUS;
+    currentInputPosition = operationChar;
+
 }
 
 -(void)doPlus {
-    if (numberIndex == 2)
-    {
-        secondOperationNumber = displayNumber;
-        
-    }else if(numberIndex == 0)
-    {
-        firstOperationNumber = displayNumber;
-    }
     displayNumber = firstOperationNumber + secondOperationNumber;
-    displayString = [NSString stringWithFormat:@"%ld", displayNumber];
-    display.text = displayString;
+    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
--(IBAction)clickMinusButton
-{
-    if(numberIndex == 2)
-        [self clickEqualButton];
-    else
-        display.text = @"-";
-    numberIndex = 1;
-    firstOperationNumber = displayNumber;
-    displayNumber = 0;
-    operation = MINUS;
-}
-
--(void)doMinus
-{
-    if (numberIndex == 2)
-    {
-        secondOperationNumber = displayNumber;
-        
-    }else if(numberIndex == 0)
-    {
-        firstOperationNumber = displayNumber;
-    }
+-(void)doMinus {
     displayNumber = firstOperationNumber - secondOperationNumber;
-    displayString = [NSString stringWithFormat:@"%ld", displayNumber];
-    display.text = displayString;
+    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
--(IBAction)clickMulitplyButton
-{
-    if(numberIndex == 2)
-        [self clickEqualButton];
-    else
-        display.text = @"*";
-    numberIndex = 1;
-    firstOperationNumber = displayNumber;
-    displayNumber = 0;
-    operation = MULTIPLY;
-}
-
--(void)doMultiply
-{
-    if (numberIndex == 2)
-    {
-        secondOperationNumber = displayNumber;
-        
-    }else if(numberIndex == 0)
-    {
-        firstOperationNumber = displayNumber;
-    }
+-(void)doMultiply {
     displayNumber = firstOperationNumber * secondOperationNumber;
-    displayString = [NSString stringWithFormat:@"%ld", displayNumber];
-    display.text = displayString;
+    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
--(IBAction)clickDivideButton
-{
-    if(numberIndex == 2)
-        [self clickEqualButton];
-    else
-        display.text = @"/";
-    numberIndex = 1;
-    firstOperationNumber = displayNumber;
-    displayNumber = 0;
-    operation = DIVIDE;
+-(void)doDivide {
+    displayNumber = firstOperationNumber / secondOperationNumber;
+    display.text = [NSString stringWithFormat:@"%ld", displayNumber];
 }
 
--(void)doDivide
-{
-    if (numberIndex == 2)
-    {
+-(IBAction)clickEqualButton {
+    if(currentInputPosition == secondNumber) {
         secondOperationNumber = displayNumber;
-        
-    }else if(numberIndex == 0)
-    {
+    }else if(currentInputPosition == equalChar) {
         firstOperationNumber = displayNumber;
+    }else if(currentInputPosition == operationChar) {
+        secondOperationNumber = displayNumber;
     }
-    if(secondOperationNumber != 0)
-    {
-        displayNumber = firstOperationNumber / secondOperationNumber;
-        displayString = [NSString stringWithFormat:@"%ld", displayNumber];
-        display.text = displayString;
-    }else
-        display.text = @"Err: can't divide 0";
-}
-
--(IBAction)clickEqualButton
-{
-    switch (operation) {
-        case PLUS:
+    switch (currentOperation) {
+        case plus:
             [self doPlus];
             break;
-        case MINUS:
+        case minus:
             [self doMinus];
             break;
-        case MULTIPLY:
+        case multiply:
             [self doMultiply];
             break;
-        case DIVIDE:
+        case divide:
             [self doDivide];
             break;
         default:
             break;
     }
-    numberIndex = 0;
+    currentInputPosition = equalChar;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     displayNumber = 0;
-    numberIndex = 0;
+    currentInputPosition = firstNumber;
+    currentOperation = none;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
