@@ -11,57 +11,35 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+enum operation {none = 10, plus, minus, multiply, divide};
+
+enum inputPosition {firstNumber = 1, operationChar, secondNumber, equalChar};
+
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *display;
 
--(void) displayInputNumber;
+-(void)doPlus;
 
--(void) doPlus;
+-(void)doMinus;
 
--(void) doMinus;
+-(void)doMultiply;
 
--(void) doMultiply;
+-(void)doDivide;
 
--(void) doDivide;
+-(IBAction)clickNumberButton:(UIButton *)sender;
 
--(IBAction)clickNumber1Button;
-
--(IBAction)clickNumber2Button;
-
--(IBAction)clickNumber3Button;
-
--(IBAction)clickNumber4Button;
-
--(IBAction)clickNumber5Button;
-
--(IBAction)clickNumber6Button;
-
--(IBAction)clickNumber7Button;
-
--(IBAction)clickNumber8Button;
-
--(IBAction)clickNumber9Button;
-
--(IBAction)clickNumber0Button;
+-(IBAction)clickOperationButton:(UIButton *)sender;
 
 -(IBAction)clickACButton;
 
 -(IBAction)clickPosNegButton;
 
--(IBAction)clickpercentageButton;
-
--(IBAction)clickDivideButton;
-
--(IBAction)clickMulitplyButton;
-
--(IBAction)clickMinusButton;
-
--(IBAction)clickPlusButton;
-
 -(IBAction)clickEqualButton;
 
--(IBAction)clickDotButton;
+//-(IBAction)clickpercentageButton;
+//
+//-(IBAction)clickDotButton;
 
 @end
 
